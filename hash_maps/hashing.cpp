@@ -19,6 +19,18 @@
 #include <map>
 #include <unordered_map>
 
+// Ordered map
+//insertion: O(log n)
+//Accessing: O(log n)
+
+
+// Unordered map
+//insertion: O(1)
+//Accessing: O(1)
+
+
+
+
 using namespace std;
 
 int main() {

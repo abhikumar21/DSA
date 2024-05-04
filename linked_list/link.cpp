@@ -15,7 +15,7 @@ class node{
 
 
 //when data is to be modified
-void insert(node* &head, int val) {
+void insertAtTail(node* &head, int val) {
 node* n=new node(val);
 
 if(head==NULL) {
@@ -27,6 +27,13 @@ while(temp->next!=NULL) {
     temp=temp->next;
 }
 temp->next=n;
+}
+
+void insertAtHead(node* &head, int val) {
+    node* n = new node(val);
+    n->next=head;
+    head=n;
+    
 }
 
 void deleteit(node* &head, int num) {
@@ -57,13 +64,14 @@ cout<<endl;
 
 int main() {
     node* head=NULL;
-    insert(head,1);
-    insert(head,2);
-    insert(head,3);
-    insert(head,4);
+    insertAtTail(head,1);
+    insertAtTail(head,2);
+    insertAtTail(head,3);
+    insertAtTail(head,4);
 
 
     deleteit(head,1);
+    insertAtHead(head, 5);
     display(head);
     return 0;
 }

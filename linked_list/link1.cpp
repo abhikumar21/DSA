@@ -4,13 +4,13 @@ using namespace std;
 class node {
 
 public: 
-int data;
-node* next;
+  int data;
+  node* next;
 
-node(int val) {
+  node(int val) {
     data=val;
     next=NULL;
-}
+  }
 };
 
 
@@ -27,6 +27,7 @@ void insert(node* &head, int val) {
     }
     temp->next=n;
 }
+
 
 void display(node* head) {
     

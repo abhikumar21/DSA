@@ -32,15 +32,37 @@ int main() {
     cin>>n;
     int m;
     cin>>m;
-    graph g;
-     for(int i=0;i<m;i++) {
+   
+    vector<int> adj[n+1];
+    for(int i=0;i<m;i++) {
         int u, v;
         cin>>u>>v;
-        g.addEdge(u, v, 0);
-     }
+        adj[u].push_back(v);
+        adj[v].push_back(u);
+    }
+    
 
-     g.printAdjList();
+    //method 1
+    // graph g;
+    //  for(int i=0;i<m;i++) {
+    //     int u, v;
+    //     cin>>u>>v;
+    //     g.addEdge(u, v, 0);
+    //  }
+    //  g.printAdjList();
+   
 
+    //O(n)
+    // int adj[n+1][m+1];
+    // for(int i=0;i<m;i++) {
+    //     int u, v;
+    //     cin>>u>>v;
+    //     adj[u][v]=1;
+    //     adj[v][u]=1;
+    // }
+
+
+    return 0
     
 }
 

@@ -3,7 +3,18 @@
 using namespace std;
 
 int main() {
+  string a="40", b="30";
+  cout<<a+b<<" ";
 
+  int a1=stoi(a);
+  int b1=stoi(b);
+  int sum=a1+b1;
+  cout<<sum<<" ";
+
+  string st= to_string(sum);
+  cout<<st[0];
+
+   
   
     return 0;
 }

@@ -13,6 +13,26 @@
 //for N nodes, minimum possible height or minimum number of levels are [ log2(N+1) ]
 //a binary tree with L leaves has at least  [  log2(N+1)+1 ]  number of levels
 
+
+// maximum levels at level L = 2 raised to power L
+// L=3 nodes=8
+
+// maximum nodes in a binary tree of height H = (2 raised to H) - 1
+// 1+2+4+8+16+.....
+
+// for N nodes, minimum possible height or minimum levels are l0g base2 (N+1)
+
+/*
+          1
+         / \
+        2   3
+       / \ / \
+      4  5 6  7    
+
+ */
+
+
+
 using namespace std;
 
 
@@ -36,8 +56,7 @@ void preorder(struct node* root) {
     }
     cout<<root->data<<" ";
     preorder(root->left);
-    preorder(root->right);
-    
+    preorder(root->right); 
 }
 
 void inorder(struct node* root) {
@@ -48,6 +67,7 @@ void inorder(struct node* root) {
     cout<<root->data<<" ";
     inorder(root->right);
 }
+
 void postorder(struct node* root) {
      if(root==NULL) {
         return;

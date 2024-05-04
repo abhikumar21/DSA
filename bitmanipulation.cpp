@@ -40,13 +40,13 @@ using namespace std;
 //////////////////////
 //update bit
 int updatebit(int n, int pos, int value) {
-int clearing= ~(1<<pos);
-n = n & clearing;
+  int clearing= ~(1<<pos);
+  n = n & clearing;
 
 }
 
 int main() {
-  cout<<updatebit(5,2);  
+  cout<<updatebit(5, 2);  
   return 0;
 }
 
