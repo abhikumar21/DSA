@@ -3,6 +3,9 @@
         "*html": "html",
         "vector": "cpp",
         "xstring": "cpp",
-        "xutility": "cpp"
+        "xutility": "cpp",
+        "ostream": "cpp",
+        "algorithm": "cpp",
+        "list": "cpp"
     }
 }

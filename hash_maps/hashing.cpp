@@ -25,7 +25,7 @@
 
 
 // Unordered map
-//insertion: O(1)
+//insertion: O(1)   worst case: O(n)
 //Accessing: O(1)
 
 

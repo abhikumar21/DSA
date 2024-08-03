@@ -7,6 +7,8 @@
 #include <cmath> // includes log(), root, pow()
 #include <map>
 
+// int hash[10e6] = {0};  max size : 10e6 inside main()
+
 using namespace std;
 
 int main() {

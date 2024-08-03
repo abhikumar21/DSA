@@ -62,6 +62,22 @@ temp=temp->next;
 cout<<endl;
 }
 
+
+// create linked list from array 
+// ListNode* createList(vector<int>& arr) {
+//     if(arr.empty()) return head;
+
+//     ListNode* head = arr[0];
+//     ListNode* temp = head;
+
+//     for(int i=1;i<arr.size();i++) {
+//         temp->next = new ListNode(arr[i]);
+//         temp=temp->next;
+//     }
+
+//     return head;
+// }
+
 int main() {
     node* head=NULL;
     insertAtTail(head,1);

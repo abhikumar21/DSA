@@ -50,32 +50,49 @@ struct node{
      }
 };
 
-void preorder(struct node* root) {
-    if(root==NULL) {
-        return;
+//1. 3. 2. 5. 4.
+//      1
+//    2    3
+//  4  5  6  7
+//
+
+void inorder(node* root) {
+    stack<node*> st;
+    node* temp = root;
+    vector<int> v;
+    while(true) {
+        if(temp!=NULL) {
+            st.push(temp);
+            temp=temp->left;
+        }
+        else{
+            if(st.empty()==true) break;
+            temp = st.top();
+            st.pop();
+            cout<<temp->data<<" ";
+            temp=temp->right;
+        }
     }
-    cout<<root->data<<" ";
-    preorder(root->left);
-    preorder(root->right); 
 }
 
-void inorder(struct node* root) {
-    if(root==NULL) {
-        return;
+void preorder(node* root) {
+    stack<node*> st;
+    node* temp;
+    st.push(root);
+    while(!st.empty()) {
+        temp=st.top();
+        st.pop();
+        cout<<temp->data<<" ";
+        if(temp->right != NULL) {
+            st.push(temp->right);
+        }
+        if(temp->left!=NULL) {
+            st.push(temp->left);
+        }
     }
-    inorder(root->left);
-    cout<<root->data<<" ";
-    inorder(root->right);
 }
 
-void postorder(struct node* root) {
-     if(root==NULL) {
-        return;
-    }
-    postorder(root->left);
-    postorder(root->right);
-    cout<<root->data<<" ";
-}
+
 
 int main() {
   struct node* root= new node(1);
@@ -83,12 +100,13 @@ int main() {
   root->right=new node(3);
   root->left->left=new node(4);
   root->left->right=new node(5);
+  root->right->left=new node(6);
+  root->right->right=new node(7);
+
 
   preorder(root);
-  cout<<endl;
-  inorder(root);
-  cout<<endl;
-  postorder(root);
+    // inorder(root);
+
 
       
     return 0;

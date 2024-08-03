@@ -1,44 +1,37 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void merge(int arr[], int s, int mid, int e) {
-    int n1=mid-s+1;
-    int n2=e-mid;
-
-    int a[n1];
-    int b[n2];
-
-    for(int i=0;i<n1;i++) {
-        a[i]=arr[s+i];
-    }
-    for(int i=0;i<n2;i++) {
-        b[i]=arr[mid+1+i];
-    }
-
-    int i=0, j=0, k=s;
-    while(i<n1 && j<n2) {
-        if(a[i]<b[j]) {
-            arr[k]=a[i];
+void merge(int arr[], int low, int mid, int high) {
+    int temp[high-low+1];
+    int left = low;
+    int right = mid+1;
+    int k=0;
+    while(left<=mid && right<=high) {
+        if(arr[left] <= arr[right]) {
+            temp[k]=arr[left];
             k++;
-            i++;
+            left++;
         }
         else{
-            arr[k]=b[j];
+            temp[k]=arr[right];
             k++;
-            j++;
+            right++;
         }
     }
-    while(i<n1) {
-        arr[k]=a[i];
+    while(left<=mid) {
+        temp[k]=arr[left];
         k++;
-        i++;
+        left++;
     }
-    while(j<n2) {
-        arr[k]=b[j];
+    while(right<=high) {
+        temp[k]=arr[right];
         k++;
-        j++;
+        right++;
     }
 
+    for(int i=low;i<=high;i++) {
+        arr[i]=temp[i-low];
+    }
 }
 
 void mergeSort(int arr[], int s, int e) {
