@@ -3,10 +3,20 @@ using namespace std;
 
 class Hero {
     private:
-    int health;
 
     public:
+    
+    Hero() { //non - default constructor
+        cout<<"Hello"<<endl;
+    }
+
+    int health;
     char level;
+
+    char setLevel(char x) {
+        level = x;
+        return x;
+    }
 
     int getHealth() {
         return health;
@@ -21,10 +31,18 @@ class Hero {
 
 int main() {
 
-    Hero Ramesh;
-    Ramesh.setHealth(34);
+    Hero Ram;
+    Ram.setHealth(45);
+    cout<<"Ram health: "<<Ram.health<<endl;
+
+    Hero *Ramesh = new Hero;
+    Ramesh->setHealth(23);
+    cout<<"health is: " << (*Ramesh).health<<" ";
+    // Ramesh.setHealth(34);
     // cout<<sizeof(Ramesh)<<endl;
-    cout<<Ramesh.setHealth(20)<<endl;
+    // Ramesh.setLevel('a');
+    // cout<<"level is " << Ramesh.level<<endl;
+
 
     return 0;
 }

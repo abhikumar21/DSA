@@ -65,9 +65,9 @@ cout<<endl;
 
 // create linked list from array 
 // ListNode* createList(vector<int>& arr) {
-//     if(arr.empty()) return head;
+//     if(arr.empty()) return NULL;
 
-//     ListNode* head = arr[0];
+//     ListNode* head = new ListNode(arr[0]);
 //     ListNode* temp = head;
 
 //     for(int i=1;i<arr.size();i++) {
@@ -77,6 +77,7 @@ cout<<endl;
 
 //     return head;
 // }
+
 
 int main() {
     node* head=NULL;

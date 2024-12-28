@@ -6,6 +6,9 @@
         "xutility": "cpp",
         "ostream": "cpp",
         "algorithm": "cpp",
-        "list": "cpp"
+        "list": "cpp",
+        "unordered_map": "cpp",
+        "sstream": "cpp",
+        "map": "cpp"
     }
 }
